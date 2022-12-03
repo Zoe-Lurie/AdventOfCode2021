@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Day14 {
     public static void main(String[] args) throws FileNotFoundException {
-        System.out.println(input(args[0]));
+        System.out.println(input("/Users/elilurie/IdeaProjects/AdventOfCode2021/src/Day14/Input14"));
     }
 
     public static long input(String filename) throws FileNotFoundException {
@@ -21,10 +21,11 @@ public class Day14 {
             instructions.put(line.substring(0,2), line.substring(6,7));
         }
 
-        for(int i=0; i<5; i++){
+        for(int i=0; i<10; i++){
             System.out.println(i + ": " + current);
             current = performStep(current, instructions);
         }
+        System.out.println("10: " + current);
 
         Map<Character, Long> count = new HashMap<>();
         for(int i=0; i<current.length(); i++){
